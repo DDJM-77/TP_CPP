@@ -18,11 +18,11 @@ TEST_CASE("6a. There is an enumeration named SpellType and a function to_string 
 
 TEST_CASE("6b. Spell is a Card with additional properties")
 {
-    auto spell = Spell { "AST-FR089", "Magie Economique", SpellType::Continuous };
+    auto spell = Spell{"AST-FR089", "Magie Economique", SpellType::Continuous};
     spell.set_description("Vous n'avez pas à payer de Life Points pour activer une Carte Magie.");
     REQUIRE(spell.get_spell_type() == SpellType::Continuous);
 
-    const Card& spell_as_card = spell;
+    const Card &spell_as_card = spell;
     REQUIRE(spell_as_card.get_id() == "AST-FR089");
     REQUIRE(spell_as_card.get_type() == CardType::Spell);
     REQUIRE(spell_as_card.get_name() == "Magie Economique");

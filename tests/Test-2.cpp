@@ -10,7 +10,7 @@
 
 TEST_CASE("2. There is a class named Card with a certain number of properties")
 {
-    auto card = Card { "SS02-FRA01", CardType::Monster };
+    auto card = Card{"SS02-FRA01", CardType::Monster};
     REQUIRE(card.get_id() == "SS02-FRA01");
     REQUIRE(card.get_type() == CardType::Monster);
     REQUIRE(card.get_name() == "");
