@@ -32,6 +32,7 @@ public:
     Trap(std::string_view id, std::string_view name, const TrapType type)
         : Card(id, name, CardType::Trap, ""), _type{type}
     {
+        _symbol = u8"罠";
     }
 
     TrapType get_trap_type()

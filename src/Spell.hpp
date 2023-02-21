@@ -41,6 +41,7 @@ public:
     Spell(std::string_view id, std::string_view name, const SpellType type)
         : Card(id, name, CardType::Spell, ""), _type{type}
     {
+        _symbol = u8"魔";
     }
 
     SpellType get_spell_type()

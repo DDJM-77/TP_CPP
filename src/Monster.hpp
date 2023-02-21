@@ -49,6 +49,7 @@ public:
     Monster(std::string_view id, std::string_view name, const Attribute &attribute, std::string_view desc, unsigned int atk, unsigned int def)
         : Card(id, name, CardType::Monster, desc), _attribute{attribute}, _atk{atk}, _def{def}, _initial_desc{desc}
     {
+        _symbol = to_symbol(_attribute);
     }
 
     Attribute get_attribute() const

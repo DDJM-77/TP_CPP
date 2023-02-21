@@ -52,11 +52,19 @@ public:
         _description = new_desc;
     }
 
+    std::string get_symbol() const
+    {
+        return _symbol;
+    }
+
 private:
     std::string _name;
     std::string _id = 0;
     CardType _type;
     std::string _description;
+
+protected:
+    std::string _symbol;
 };
 
 std::string
