@@ -1,3 +1,4 @@
+set(CMAKE_CXX_STANDARD 17)
 cmake_minimum_required(VERSION 3.18)
 project(CPP_Exercices)
 
@@ -19,6 +20,7 @@ file(GLOB all_tests tests/test*)
 
 
 foreach(test_fullpath ${all_tests})
+
     get_filename_component(test_basename ${test_fullpath} NAME_WE)
 
     # ${test_id} contains the part before the first `-`.
@@ -30,7 +32,7 @@ foreach(test_fullpath ${all_tests})
 
     # ${exec_name} is the name of the built executable
     set(exec_name "${test_id}")
-    add_executable(${exec_name} EXCLUDE_FROM_ALL 
+    add_executable(${exec_name} EXCLUDE_FROM_ALL
         ${test_fullpath}
         src/ArrayNode.cpp
         src/InstanceCounter.cpp
@@ -76,6 +78,7 @@ add_executable(sandbox EXCLUDE_FROM_ALL
 )
 
 target_link_libraries(sandbox PRIVATE Catch2::Catch2WithMain)
+
 
 
 # NE PAS MODIFIER CE FICHIER !
